@@ -13,9 +13,9 @@ build:
     number: 1
     run_exports:
         - {{ pin_subpackage('simbody', max_pin='x.x') }}
-    # NOTE : This is needed to ensure the paths to Simbody's binaries, like
-    # simbody-visualizer, are corrected.
-    detect_binary_files_with_prefix: true
+    binary_has_prefix_files:
+        - *.dll
+        - *.exe
 
 # NOTE: This installs Simbody and the optional visualizer on Linux, Windows,
 # and OSX. On Windows, we build against the openblas available in conda-forge,
